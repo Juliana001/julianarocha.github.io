@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juliana Rocha</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="logoSfundo.png" type="image/png" />
+    <link rel="shortcut icon" href="logoSfundo.png" type="image/png" />
+    <link rel="stylesheet" href="cssdapaginapessoal.css" />
+
+    <!-- CSS da tela de loading -->
+    <style>
+      /* Tela de Loading */
+      #loadingScreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        animation: hideLoading 3s forwards;
+      }
+
+      .loading-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+      }
+
+      .loading-logo {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        animation: logoFloat 2s ease-in-out infinite;
+      }
+
+      .loading-bar-container {
+        width: 200px;
+        height: 4px;
+        background: rgba(217, 56, 124, 0.1);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      .loading-bar {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #d9387c, #f04d92);
+        animation: fillLoadingBar 3s linear forwards;
+      }
+
+      .loading-text {
+        color: #2c3e50;
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 1px;
+      }
+
+      /* Esconde o conteúdo principal inicialmente */
+      body > *:not(#loadingScreen) {
+        opacity: 0;
+        animation: showContent 0.5s ease 3s forwards;
+      }
+
+      /* Animações */
+      @keyframes fillLoadingBar {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      @keyframes hideLoading {
+        0% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      @keyframes logoFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes showContent {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Tela de Loading -->
+    <div id="loadingScreen">
+      <div class="loading-content">
+        <img
+          src="logoSfundo.png"
+          alt="Logo Juliana Rocha"
+          class="loading-logo"
+        />
+        <div class="loading-bar-container">
+          <div class="loading-bar"></div>
+        </div>
+        <p class="loading-text">Carregando...</p>
+      </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <header>
+      <div class="container nav-container">
+        <a href="#home" class="logo">
+          <img src="logoSfundo.png" alt="Logo Juliana Rocha" class="logo-img" />
+          <span>Juliana Rocha</span>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>
+            Transformando dados em
+            <span class="highlight">insights inteligentes</span>
+          </h1>
+          <p>
+            
+        Estudante de Engenharia de Computação com atuação em IA, Ciência e Engenharia de Dados.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn">Ver Projetos</a>
+            <a href="#contact" class="btn-outline">Contato</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="data-visualization">
+            <div class="chart-bar" style="height: 70%"></div>
+            <div class="chart-bar" style="height: 90%"></div>
+            <div class="chart-bar" style="height: 60%"></div>
+            <div class="chart-bar" style="height: 85%"></div>
+            <div class="chart-bar" style="height: 75%"></div>
+            <div class="ai-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Engenharia de Computação com foco em IA e Ciência de Dados.</h3>
+            <p>
+              Sou apaixonado por descobrir padrões ocultos em dados e
+              transformá-los em soluções práticas. Minha especialidade está na
+              interseção entre Inteligência Artificial, Machine Learning e
+              automação de processos analíticos.
+            </p>
+
+            <div class="about-details">
+              <div class="detail-item">
+                <i class="fas fa-chart-line"></i>
+                <div>
+                  <h4>Engenharia e Preparação de Dados</h4>
+                    <p>
+                      Realizo limpeza, organização e transformação de dados para garantir qualidade
+                      e confiabilidade nas análises.
+                    </p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-cogs"></i>
+                <div>
+                  <h4>Sistemas Baseados em Dados</h4>
+                  <p>
+                    Desenvolvo soluções que utilizam dados para gerar recomendações e indicadores
+                    estratégicos.
+                  </p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-project-diagram"></i>
+                <div>
+                  <h4>Processamento de Dados</h4>
+                  <p>
+                    Transformo dados brutos em informações acionáveis e
+                    visualizações claras
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn" style="margin-top: 30px"
+              >Vamos Conversar</a
+            >
+          </div>
+          <div class="about-image">
+            <div class="profile-card">
+              <img
+                src="fotoJuliana.jpg"
+                alt="Perfil IA e Dados"
+                class="profile-img"
+              />
+              <div class="profile-info">
+                <h4>Juliana Rocha</h4>
+                <p>Engenheira de Computação</p>
+          
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>Inteligência Artificial</h3>
+            <ul class="skill-list">
+              <li>Machine Learning</li>
+              <li>Deep Learning</li>
+              <li>Computer Vision</li>
+              <li>Redes Neurais</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>Análise de Dados</h3>
+            <ul class="skill-list">
+              <li>Python (Pandas, NumPy)</li>
+              <li>SQL Avançado</li>
+              <li>Estatística Aplicada</li>
+              <li>Visualização de Dados</li>
+              <li>ETL/ELT</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Automação</h3>
+            <ul class="skill-list">
+              <li>Scripting em Python</li>
+              <li>APIs e Web Scraping</li>
+              <li>Workflow Automatizados</li>
+              <li>Ferramentas de BI</li>
+              <li>Dashboards Interativos</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Ferramentas</h3>
+            <ul class="skill-list">
+              <li>TensorFlow / PyTorch</li>
+              <li>Jupyter / Colab</li>
+              <li>Git & GitHub</li>
+              <li>Power BI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Projetos em Destaque</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <i class="fas fa-chart-bar project-icon"></i>
+              <div class="project-badge">ML</div>
+            </div>
+            <div class="project-info">
+              <h3>Sistema indicação de filmes</h3>
+              <p>
+                Modelo de machine learning para indicação de filmes com base em filmes que o usuário gosta.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Seaborn</span>
+              </div>
+              <a href="https://github.com/Juliana001/Projetos-pessoais--InteligenciaArtificial/blob/main/Projetos%20Machine%20Learning/Machine_learning_para_recomenda%C3%A7%C3%A3o_de_filmes.ipynb" class="project-link"
+                >Ver detalhes <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">
+              <i class="fas fa-cogs project-icon"></i>
+              <div class="project-badge">ML</div>
+            </div>
+            <div class="project-info">
+              <h3>Sistema para indicação de perfumes</h3>
+              <p>
+                Modelo de machine learning para indicação de perfumes com base em perfumes que o usuário gosta.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Scikit-learn</span>
+              </div>
+              <a href="https://github.com/Juliana001/Projetos-pessoais--InteligenciaArtificial/blob/main/Projetos%20Machine%20Learning/IndicadorDePerfumes.ipynb" class="project-link"
+                >Ver detalhes <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">
+              <i class="fas fa-comments project-icon"></i>
+              <div class="project-badge">Engenharia de dados</div>
+            </div>
+            <div class="project-info">
+              <h3>Transformação de dados</h3>
+              <p>
+                Projetos em pyhton para limpar e organizar os dados, deixando-os prontos para uso.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Pandas</span>
+                <span class="tag">NumPy</span>
+              
+              </div>
+              <a href="https://github.com/Juliana001/AnaliseDeDados_projetosPessoais/blob/main/Tratamento_de_dados/LimpezaDadosEnade2023.ipynb" class="project-link"
+                >Ver detalhes <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-cta">
+          <h3>Tem um projeto de análise de dados?</h3>
+          <p>
+            Vamos conversar sobre como posso ajudar a transformar seus dados em
+            decisões inteligentes.
+          </p>
+          <a href="#contact" class="btn">Iniciar Projeto</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Vamos Conectar</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <h3>Portfólio Completo</h3>
+          
+              <a href="https://www.linkedin.com/in/juliana-do-nascimento-rocha-a70154205/" class="project-link"
+                >LinkedIn <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3>Disponibilidade</h3>
+              <p>Remoto</p>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Envie uma mensagem</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" placeholder="Seu nome" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Seu email" required />
+              </div>
+              <div class="form-group">
+                <textarea
+                  placeholder="Descreva seu projeto ou dúvida..."
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn">Enviar Mensagem</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <a href="#home" class="logo">
+              <i class="fas fa-brain"></i> Data<span>AI</span>
+            </a>
+            <p>
+              Transformando dados em decisões inteligentes através de IA e
+              automação.
+            </p>
+          </div>
+          <div class="social-links">
+            <a
+              href="https://github.com/Juliana001"
+              target="_blank"
+              class="social-link"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/juliana-do-nascimento-rocha-a70154205/"
+              target="_blank"
+              class="social-link"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            
+        </div>
+        <div class="footer-bottom">
+          <p>
+            © 2026 Juliana Rocha. Engenharia de Computação com foco em IA e Ciência de Dados. Todos os
+            direitos reservados.
+          </p>
+          <p>
+            Portfólio hospedado no
+            <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript mínimo para o menu mobile -->
+    <script>
+      // Menu mobile toggle
+      document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn')
+        const navLinks = document.getElementById('navLinks')
+
+        if (mobileMenuBtn && navLinks) {
+          mobileMenuBtn.addEventListener('click', function () {
+            navLinks.classList.toggle('active')
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active')
+              ? '<i class="fas fa-times"></i>'
+              : '<i class="fas fa-bars"></i>'
+          })
+        }
+      })
+    </script>
+  </body>
+</html>
